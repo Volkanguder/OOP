@@ -9,8 +9,8 @@
 5. Bu sistemi tasvir eden Class (Sınıf) diyagramını çiziniz.
 
 > **Not : Sınıflara ait nitelik ve davranışların belirtilmesine gerek yoktur.**
-> 
-> [![University Management System](https://www.hizliresim.com/8ipzxjr "University Management System")](https://www.hizliresim.com/8ipzxjr "University Management System")
+
+#### [Üniversite Yönetim Sistemi çalışmasını görmek için Tıkla!!!](https://github.com/Volkanguder/OOP/blob/master/UniversityManagementSystem/University%20Management%20System.png "Üniversite Yönetim Sistemi UML için Tıkla")
 
 # University Management System
 #### In this project, we will create UML modeling and Class diagrams for a University management system based on the following specifications:
@@ -21,3 +21,5 @@
 5. Draw a Class diagram representing this system.
 
 > **Note: There is no need to specify the attributes and behaviors of the classes.**
+
+#### [Click to see the University Management System in action!!!](https://github.com/Volkanguder/OOP/blob/master/UniversityManagementSystem/University%20Management%20System.png "Click to see the University Management System in action!!!")
