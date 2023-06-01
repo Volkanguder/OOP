@@ -63,7 +63,3 @@
 | + Kitap(kitapAdi,yazar,sayfaSayisi)<br> + getKitapAdi(): string<br> + setKitapAdi(String KitapAdi) : void<br> + getYazar() : string<br>+ setYazar() : void<br> + getSayfaSayisi() : int<br>+ setSayfaSayisi() : void  |
 
 
-
-
-
-
