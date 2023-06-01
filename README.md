@@ -18,7 +18,7 @@
 &emsp; Ayrıca değişkenlere sınıfların dışından erişim olmaması ve bir sınıf içindeki değişkenlerin nasıl ve ne kadar olacağının da başka kodlardan saklanmış olması anlamına gelir. Böylelijler değişkenlerimizi sarmalayarak istenmeyen durumlardan korunacak bir filtre haline dönüştürebiliriz.
 
 ## Erişim Belirleyiciler (Access Modifier)
-&emsp; Bir sınıfa nitelik ve davranışlara ulaşabilmek için** Erişim Belirleyiciler (Access Modifier)** kullanılır. Erişim belirleyiciler, değişken, metot ve sınıfların önüne yazılır ve yazıldıkları konuların erişebilecekleri alanları belirler.
+&emsp; Bir sınıfa nitelik ve davranışlara ulaşabilmek için **Erişim Belirleyiciler (Access Modifier)** kullanılır. Erişim belirleyiciler, değişken, metot ve sınıfların önüne yazılır ve yazıldıkları konuların erişebilecekleri alanları belirler.
 
 - **Private (-) :**
 > &emsp; Yazıldığı öğenin sadece ait olduğu sınıftan doğrudan erişilebilir olduğunu ve o sınıfın dışındaki kod parçacıklarından doğrudan erişim izni olmadığını tanımlar.
@@ -61,5 +61,9 @@
 | :------------ |
 | - kitapAdi : string<br>- yazar : string<br>- sayfaSayisi : int |
 | + Kitap(kitapAdi,yazar,sayfaSayisi)<br> + getKitapAdi(): string<br> + setKitapAdi(String KitapAdi) : void<br> + getYazar() : string<br>+ setYazar() : void<br> + getSayfaSayisi() : int<br>+ setSayfaSayisi() : void  |
+
+
+
+
 
 
