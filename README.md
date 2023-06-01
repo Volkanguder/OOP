@@ -76,6 +76,7 @@ public class Kitap {
 }
 ```
 &emsp;  **Constructor** metodu görüldüğü gibi modifiye ettik ve nesne oluşturulurken anlamız verilerin olmasını engelledik. Ama sorunlarımız hala bitmedi , biz nesneye ait niteliklere hala dışarıdan erişebiliyoruz ve `book.sayfaSayisi = -10` dersek , nesneye ait sayfa sayısını yine anlamsızlaştırmış oluruz. Bu sorunu çözmek için sınıfa ait değişkenlere dışarıdan erişimi kapatmamız gerekir ve oluşturduğumuz değişkenlerin** erişim belirleyicilerini (Access Modifiers)** değiştirmemiz gerekli. Tüm **public'leri private** olarak değiştiriyoruz.
+
 &emsp;  Sınıfımızın son hali
 
 |<center>Kitap</center>|
@@ -113,23 +114,23 @@ public class Kitap {
 &emsp;  Sınıfımıza ait **private** değişkenler mevcut. Bu değişkenlere dışarıdan erişebilmek için **her bir değişkenimiz** için **Getter** metodu yazmalıyız. Nesneye ait bu metot çağrıldığında geriye bir değer döndürmeli ve bu değer bizim istediğimiz **private** değişken olmalı. `sayfaSayisi` değişkeni için **getter** metodu tanımlayalım,
 ```java
 public class Kitap {
-	private int sayfaSayisi;
-	private String kitapAdi, yazar;
+    private int sayfaSayisi;
+    private String kitapAdi, yazar;
 
 
-	Kitap(String kitapAdi, int sayfaSayisi, String yazar) {
-		this.kitapAdi = kitapAdi;
-		this.yazar = yazar;
-		if (sayfaSayisi < 1) {
-			this.sayfaSayisi = 10;
-		} else {
-			this.sayfaSayisi = sayfaSayisi;
-		}
-	}
-	
-	public int getSayfaSayisi() {
-		return this.sayfaSayisi;
-	}
+    Kitap(String kitapAdi, int sayfaSayisi, String yazar) {
+        this.kitapAdi = kitapAdi;
+        this.yazar = yazar;
+        if (sayfaSayisi < 1) {
+            this.sayfaSayisi = 10;
+        } else {
+            this.sayfaSayisi = sayfaSayisi;
+        }
+    }
+
+    public int getSayfaSayisi() {
+        return this.sayfaSayisi;
+    }
 }
 ```
 &emsp;  Görüldüğü gibi basit bir metot yardımı ile sınıfa ait **private** değişkenimize ulaşabildik. Burada dikkat edilmesi gereken noktalar **getter** metotları **geri dönüşü** olan metot tipindedir ve isimlendirilmesi ise **get** ile başlayıp sonra değişken ismi yazılmalıdır. İsimlendirmeyi bu şekilde yapmasak da çalışacaktır lakin kodun okunabilirliği adına bu kurala uyulması **gerekir**.
@@ -138,59 +139,59 @@ public class Kitap {
 &emsp;  Biz **getter** metodu ile **private** olan değişkenimize ulaştık.Peki bu değişkenin değerini değiştirmek istediğimizde ne yapmalıyız ? Bir sınıfa ait **private** bir değişkenin değerini değiştirmek için, setter metodu yazılmalıdır. `sayfaSayisi` değişkeni için **setter** metodu yazalım.
 ```java
 public class Kitap {
-	private int sayfaSayisi;
-	private String kitapAdi, yazar;
+    private int sayfaSayisi;
+    private String kitapAdi, yazar;
 
 
-	Kitap(String kitapAdi, int sayfaSayisi, String yazar) {
-		this.kitapAdi = kitapAdi;
-		this.yazar = yazar;
-		if (sayfaSayisi < 1) {
-			this.sayfaSayisi = 10;
-		} else {
-			this.sayfaSayisi = sayfaSayisi;
-		}
-	}
-	
-	public int getSayfaSayisi() {
-		return this.sayfaSayisi;
-	}
-	
-	public void setSayfaSayisi(int sayfaSayisi) {
-		this.sayfaSayisi = sayfaSayisi;
-	}
+    Kitap(String kitapAdi, int sayfaSayisi, String yazar) {
+        this.kitapAdi = kitapAdi;
+        this.yazar = yazar;
+        if (sayfaSayisi < 1) {
+            this.sayfaSayisi = 10;
+        } else {
+            this.sayfaSayisi = sayfaSayisi;
+        }
+    }
+
+    public int getSayfaSayisi() {
+        return this.sayfaSayisi;
+    }
+
+    public void setSayfaSayisi(int sayfaSayisi) {
+        this.sayfaSayisi = sayfaSayisi;
+    }
 }
 ```
 &emsp;  Görüldüğü üzere **setter** metodu sadece değiştirme işlemi yapacağı için **void** olarak tanımlandı ve bir adet parametre aldı. Bu parametre bizim yeni değerimi taşıyor olup, sınıfa ait değişkene aktarılmıştır. Ama burada hala bir sorun söz konusudur, bizler **setter** metodunu kullanarak sayfa sayısını negatif girebiliriz. Bu sorunu aşmak için **constructor (kurucu)** metotta yaptığımız gibi bir **if** koşulu ile bu sorunu çözebiliriz.
 ```java
 public class Kitap {
-	private int sayfaSayisi;
-	private String kitapAdi, yazar;
+    private int sayfaSayisi;
+    private String kitapAdi, yazar;
 
 
-	Kitap(String kitapAdi, int sayfaSayisi, String yazar) {
-		this.kitapAdi = kitapAdi;
-		this.yazar = yazar;
-		if (sayfaSayisi < 1) {
-			this.sayfaSayisi = 10;
-		} else {
-			this.sayfaSayisi = sayfaSayisi;
-		}
-	}
+    Kitap(String kitapAdi, int sayfaSayisi, String yazar) {
+        this.kitapAdi = kitapAdi;
+        this.yazar = yazar;
+        if (sayfaSayisi < 1) {
+            this.sayfaSayisi = 10;
+        } else {
+            this.sayfaSayisi = sayfaSayisi;
+        }
+    }
 
 
-	public int getSayfaSayisi() {
-		return this.sayfaSayisi;
-	}
+    public int getSayfaSayisi() {
+        return this.sayfaSayisi;
+    }
 
 
-	public void setSayfaSayisi(int sayfaSayisi) {
-		if (sayfaSayisi < 1) {
-			this.sayfaSayisi = 10;
-		} else {
-			this.sayfaSayisi = sayfaSayisi;
-		}
-	}
+    public void setSayfaSayisi(int sayfaSayisi) {
+        if (sayfaSayisi < 1) {
+            this.sayfaSayisi = 10;
+        } else {
+            this.sayfaSayisi = sayfaSayisi;
+        }
+    }
 }
 ```
 &emsp;  **Setter** metodunu modifiye ederek nesnemiz için anlamsız olan durumu ortadan kaldırmış olduk. **Setter** metodunun genel özellikleri ise , geriye bir değer döndürmeyen metot olması ve isimlendirme yaparken başlangıç olarak set yazıp sonrasında değişken ismini yazmaktır.
