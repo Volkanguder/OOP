@@ -202,12 +202,74 @@ public class Kitap {
 
 ------------
 
+# 2. Inheritance (Kalıtım)
+&emsp;  Kalıtım, programlama ortamında da gerçek hayattaki tanımına benzer bir işi gerçekleştirir. Bir sınıfın başka bir sınıftan kalıtım yapması demek, kalıtımı yapan sınıfın diğer sınıftaki nitelik ve davranışlarını kendisine alması demektir. Kalıtımı yapan sınıfa **alt sınıf**, kendisinden kalıtım yapılan sınıfa **ata sınıf** dersek, ata sınıfta tanımlı olan her şeyin alt sınıf için de tanımlı olduğunu söyleyebiliriz.
+
+Eğer bir A sınıfın B sınıfından kalıtım yapması isteniyorsa, aşağıda ki şekilde tanımlanır.
+```java
+public class A extends B {
+     // 
+}
+```
+## Kalıtım Türleri
+### Tek Yönlü Kalıtım (Single Inheritance)
+&emsp;  Bir sınıfın başka bir sınıfı genişlettiği alt ve ata sınıf ilişkisini ifade eder.
+
+![1](https://github.com/Volkanguder/OOP/assets/67462858/463b57e8-c3e9-4159-8f2d-09b25eb0d153)
+
+&emsp;  Bu örnekte B sınıfı A sınıfını miras alır.
+
+### Çoklu Kalıtım (Multiple Inheritance)
+&emsp;  Bir sınıfın birden fazla sınıfı miras almasını ifade eder; bu, bir alt sınıfın iki ata sınıfa sahip olduğu anlamına gelir.
+
+> Not : Java çoklu kalıtımı desteklemez. (Interface kullanılır)
+
+![2](https://github.com/Volkanguder/OOP/assets/67462858/0efd8e50-afca-49fe-90cc-d52cfe5a48f3)
+
+### Çok Seviyeli Kalıtım (Multilevel Inheritance)
+&emsp;  Bir sınıfa ait alt sınıfın başka sınıfları genişletmesine denir.
+
+![3](https://github.com/Volkanguder/OOP/assets/67462858/0a8ac68f-1dbd-4440-be77-b24552c5acdb)
+
+Bu örnekte , C sınıfı B sınıfını miras alır, B sınıfı ise A sınıfını miras alır. C sınıfı dolaylı yoldan A sınıfını da miras almış olur.
+
+### Hiyerarşik Kalıtım (Hierarchical Inheritance)
+&emsp;  Birden fazla sınıfın aynı sınıfı genişlettiği bir alt ve üst sınıf ilişkisini ifade eder.
+
+Bu örnekte : B, C ve D sınıfları aynı A sınıfını genişletir.
+
+![4](https://github.com/Volkanguder/OOP/assets/67462858/9d4477da-fc69-491d-a6fd-c7f0e01c383f)
+
+### Hibrit Kalıtım (Hybrid Inheritance)
+&emsp;  Programda birden fazla kalıtım türünün kombinasyonuna denir. Örneğin, A ve B sınıfı, C sınıfını genişletir ve başka bir D sınıfı, A sınıfını genişletir, bu bir hibrit kalıtım örneğidir, çünkü bu, tek yönlü ve hiyerarşik kalıtımın bir birleşimidir.
+
+### Kalıtım'da Constructor Zinciri ve Super Anahtar Sözcüğü
+&emsp;  Bir sınıfa ait nesne oluşturulurken, o sınıfın bir kurucusunun işletildiğini, kurucunun çalışması tamamlandıktan sonra bellekte artık bir nesnenin oluştuğunu biliyoruz. Kurucuları da nesneleri ilk oluşturuldukları anda anlamlı durumlara taşıyabilmek için kullanıyoruz. Bu durumda, eğer nesnesi oluşturulacak sınıf başka bir sınıfın alt sınıfıysa, önce ataya ait iç nesnesinin oluşturulması ve bu nesnenin niteliklerinin ilk değerlerinin verilmesi gerektiğini söyleyebiliriz.
+&emsp;  İç içe nesnelerin oluşabilmesi için nesnelerin içten dışa doğru oluşması gerekir. İç-nesnenin oluşabilmesi için, nesnesi oluşturulacak sınıfa ait kurucu işletilmeye başladığı zaman ilk iş olarak ata sınıfa ait kurucu çağrılır. Eğer ata sınıf da başka bir sınıfın alt sınıfıysa, bu kez o sınıfın kurucusu çağrılır. Kurucu zinciri alt sınıftan ata sınıfa doğru bu şekilde ilerler. En üstte, kalıtım ağacının tepesindeki sınıfın kurucusunun çalışması sonlandıktan sonra sırası ile alt sınıfların kurucularının çalışması sonlanacaktır. Böylece iç içe nesneler sıra ile oluşturularak en son en dıştaki nesne oluşturulmuş olur ve kurucu zinciri tamamlanır.
+
+### Super Kullanımı
+&emsp;  Eğer ata sınıfta varsayılan kurucu yoksa ve programcı alt sınıftaki kurucunun içinde ata sınıfın hangi kurucusunun çağrılacağını belirtmezse derleme hatası alınacaktır. Çünkü derleyici aksi belirtilmedikçe ata sınıfın varsayılan kurucusunu çağıran super() kodunu üretecektir. Ata sınıfın hangi kurucusunun çağrılacağı, super anahtar sözcüğü ile birlikte verilen parametrelere göre belirlenir. Nasıl ki new işleci ile birlikte kullandığımız parametreler hangi kurucunun çağrılacağını belirliyorsa, super anahtar sözcüğü ile birlikte kullanılan parametreler de aynı şekilde ata sınıfın hangi kurucusunun işletileceğini belirler.
+
+
+------------
+
+
+------------
 
 
 
 
+# 3. Polymorphism(Çok Biçimlilik)
+&emsp;  Polymorphism(çok biçimlilik) NYP'de programlama dilinin farklı tip verileri ve sınıfları farklı şekilde işleme yeteneğini belirten özelliğidir. Daha belirgin olmak gerekirse, metotları ve türetilmiş sınıfları yeniden tanımlama yeteneğidir.
 
+&emsp;  Polimorfizm, alt sınıfların ata sınıflardaki metotları geçersiz kılması(method overriding) sayesinde çok biçimli olarak davranmasına denir. Bu sayede alt sınıf ata sınıfından gelen davranışı kendine göre şekillendirebilir.
 
+&emsp;  Metotlarda "Geçersiz Kılma" ise bir alt sınıfın içine doğrudan ya da dolaylı ata sınıflarından gelen bir(ya da daha fazla) yöntemin aynısının(aynı yöntem adı ve aynı parametre listesi) kodlanmasına verilen addır.
 
+&emsp;  Polimorfizm sayesinde uygulamaların genişletilebilirliğini sağlarız ve bir ata sınıfın sunduğu yöntemleri geçersiz kılan alt sınıflar yardımı ile ata sınıfa göre kodlanmış tek bir kod kesimine farklı davranışlar yüklemek olanaklı olmaktadır. Öyleyse, elimizde esnek bir altyapı var demektir. Bu esneklik altyapıya yeni türlerin eklenmesi, kalıtım ve geçersiz kılma ilişkileri çerçevesinde oldukça kolaydır.
+
+**Polimorfizm Örneği**
+
+![polimorfizm](https://github.com/Volkanguder/OOP/assets/67462858/f3499f50-47c2-493c-8e7f-cfe2614e5cbc)
 
 
