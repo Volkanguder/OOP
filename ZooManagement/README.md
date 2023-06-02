@@ -15,6 +15,7 @@
 
 &emsp; Polimorfizm modelini kullanarak, yukarıda açıklanan durumu ele almak için bir sınıf diyagramı tasarlayalım.
 
+![ZooManagement](https://github.com/Volkanguder/OOP/assets/67462858/33e22105-30d4-478b-8d74-2dfd8d6924d0)
 
 
 # Zoo Management
@@ -32,3 +33,4 @@
 
 &emsp; Using the polymorphism model, let's design a class diagram to address the situation described above.
 
+![ZooManagement](https://github.com/Volkanguder/OOP/assets/67462858/d545a741-853e-455b-b6c1-91cef93a4dd7)
