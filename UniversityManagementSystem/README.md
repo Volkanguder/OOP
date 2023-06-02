@@ -9,7 +9,9 @@
 
 > **Not : Sınıflara ait nitelik ve davranışların belirtilmesine gerek yoktur.**
 
-#### [Üniversite Yönetim Sistemi çalışmasını görmek için Tıkla!!!](https://github.com/Volkanguder/OOP/blob/master/UniversityManagementSystem/UniversityManagementSystem.png "Üniversite Yönetim Sistemi UML için Tıkla")
+![UniversityManagementSystem](https://github.com/Volkanguder/OOP/assets/67462858/05e1636a-0122-4b88-952e-de9bb561b2eb)
+
+
 
 # University Management System
 #### In this project, we will create UML modeling and Class diagrams for a University management system based on the following specifications:
@@ -20,4 +22,4 @@
 
 > **Note: There is no need to specify the attributes and behaviors of the classes.**
 
-#### [Click to see the University Management System in action!!!](https://github.com/Volkanguder/OOP/blob/master/UniversityManagementSystem/UniversityManagementSystem.png "Click to see the University Management System in action!!!")
+![UniversityManagementSystem](https://github.com/Volkanguder/OOP/assets/67462858/05e1636a-0122-4b88-952e-de9bb561b2eb)
